@@ -101,7 +101,7 @@ h1 {
   padding-bottom: 40px;
   margin-bottom: 120px;
   font-family: sans-serif;
-  font-size: 7em;
+  font-size: 9em;
   text-transform: uppercase;
   width: 100%;
   max-width: 1200px;
@@ -172,18 +172,6 @@ h3 {
   line-height: 24px;
   color: #666666;
 }
-.card .card__text a {
-  color: rgba(255, 255, 255, 0.5019607843);
-  font-size: 19px;
-  background-color: #013fff;
-  padding: 5px 12px;
-  border-radius: 12px;
-  width: 36px;
-  height: 36px;
-}
-.card .card__text a:hover {
-  color: #fff;
-}
 
 .team {
   width: 100%;
@@ -230,8 +218,8 @@ h3 {
 }
 .team .team-text .a a {
   position: absolute;
-  top: 17%;
-  right: 31%;
+  top: 24%;
+  right: 33%;
   color: #999;
   font-size: 20px;
 }
@@ -305,6 +293,143 @@ h3 {
   font-weight: 400;
 }
 
+.about-us {
+  display: grid;
+  grid-template-areas: "top  right" "bottom right";
+  justify-content: space-between;
+  margin-bottom: 100px;
+  position: relative;
+}
+.about-us .arrow {
+  grid-area: arrow;
+}
+.about-us .about-us-title {
+  grid-area: top;
+  font-size: 85px;
+  line-height: 80px;
+  color: #013fff;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+.about-us .about-us-content {
+  position: absolute;
+  bottom: 0;
+  grid-area: bottom;
+  line-height: 24px;
+  color: #666666;
+  width: 97%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cccccc;
+}
+.about-us .about-us-content .arrow {
+  display: none;
+}
+.about-us .about-us-img {
+  grid-area: right;
+}
+
+.truck {
+  width: 90%;
+  height: 400px;
+  background-color: #013fff;
+  display: flex;
+  background-image: url(../images/car-back.png);
+  background-repeat: no-repeat;
+}
+
+.contacts {
+  max-width: 1280px;
+  height: 600px;
+  background-image: linear-gradient(#013fff, #ebebeb);
+  margin: 0 auto;
+  border-radius: 24px;
+  margin-bottom: 100px;
+}
+.contacts .contact {
+  display: grid;
+  grid-template-areas: "title img" "form img";
+  height: 600px;
+  align-items: center;
+}
+.contacts .contact .contact-title {
+  grid-area: title;
+  text-transform: uppercase;
+  max-width: 576px;
+}
+.contacts .contact .contact-title h3 {
+  font-weight: 200;
+  font-size: 96px;
+  line-height: 96px;
+  color: #fff;
+}
+.contacts .contact .contact-form {
+  grid-area: form;
+  max-width: 320px;
+  max-height: 120px;
+}
+.contacts .contact .contact-form form input {
+  width: 100%;
+  padding: 12px 20px;
+  color: #666;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.contacts .contact .contact-form form button {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 100px;
+  padding: 12px 20px;
+  color: #fff;
+  border: none;
+  background-color: #013fff;
+}
+.contacts .contact .contact-img {
+  position: relative;
+  grid-area: img;
+  z-index: 55;
+}
+.contacts .contact .contact-img::after {
+  content: "";
+  width: 440px;
+  height: 440px;
+  background-color: #fff;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: 101px;
+  z-index: -1;
+}
+
+.footer-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 60px;
+}
+.footer-flex .footer-img img {
+  padding-left: 10px;
+}
+
+.tel {
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  color: #666666;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+.tel:hover {
+  color: #013fff;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
     padding: 0 20px;
@@ -345,6 +470,59 @@ h3 {
     width: 100%;
     height: 280px;
     background-size: cover;
+  }
+  .about-us {
+    grid-template-areas: "top " "right" "bottom";
+  }
+  .about-us .about-us-title {
+    font-size: 64px;
+  }
+  .about-us .about-us-title .arrow {
+    display: none;
+  }
+  .about-us .about-us-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    position: relative;
+  }
+  .about-us .about-us-content .arrow {
+    display: initial;
+    width: 60px;
+    height: 60px;
+  }
+  .about-us .about-us-content p {
+    width: 80%;
+  }
+  .about-us .about-us-img {
+    grid-area: right;
+    width: 100%;
+    background-size: cover;
+  }
+  .contacts .contact {
+    align-items: end;
+  }
+  .contacts .contact .contact-img {
+    transform: translateX(-116px);
+  }
+  .contacts .contact .contact-img::after {
+    width: 300px;
+    height: 300px;
+    left: 61px;
+    top: -10px;
+  }
+  .contacts .contact .contact-img img {
+    width: 320px;
+    height: auto;
+  }
+  .contacts .contact .contact-form {
+    max-height: 170px;
+  }
+  .footer-flex .footer-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
   }
 }
 @media only screen and (min-width: 481px) and (max-width: 768px) {
@@ -408,6 +586,67 @@ h3 {
     height: 280px;
     background-size: cover;
   }
+  .about-us {
+    grid-template-areas: "top " "right" "bottom";
+  }
+  .about-us .about-us-title {
+    font-size: 64px;
+  }
+  .about-us .about-us-title .arrow {
+    display: none;
+  }
+  .about-us .about-us-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    position: relative;
+  }
+  .about-us .about-us-content .arrow {
+    display: initial;
+    width: 60px;
+    height: 60px;
+  }
+  .about-us .about-us-content p {
+    width: 80%;
+  }
+  .about-us .about-us-img {
+    grid-area: right;
+    width: 100%;
+    background-size: cover;
+  }
+  .contacts .contact {
+    grid-template-areas: "title" "img" "form";
+  }
+  .contacts .contact .contact-img img {
+    width: 260px;
+    height: 229px;
+  }
+  .contacts .contact .contact-img::after {
+    width: 200px;
+    height: 200px;
+    left: 51px;
+    top: 26px;
+  }
+  .contacts .contact .contact-title h3 {
+    font-size: 60px;
+    line-height: 72px;
+  }
+  .footer-flex {
+    flex-direction: column;
+    border-bottom: none;
+    row-gap: 20px;
+  }
+  .footer-flex .footer-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .footer-flex .footer-img {
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
 }
 @media only screen and (max-width: 480px) {
   .container {
@@ -436,6 +675,10 @@ h3 {
     height: 100%;
     background-size: cover;
   }
+  .card .card__text .card__paragraph a img {
+    width: 44px;
+    height: 44px;
+  }
   .card .card__text .card__title {
     max-width: 70%;
   }
@@ -458,5 +701,69 @@ h3 {
   .team .team-images .one-img img {
     width: 100%;
     background-size: cover;
+  }
+  .about-us {
+    grid-template-areas: "top " "right" "bottom";
+  }
+  .about-us .about-us-title {
+    font-size: 40px;
+  }
+  .about-us .about-us-title .arrow {
+    display: none;
+  }
+  .about-us .about-us-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    position: relative;
+  }
+  .about-us .about-us-content .arrow {
+    display: initial;
+    width: 44px;
+    height: 44px;
+  }
+  .about-us .about-us-content p {
+    width: 80%;
+  }
+  .about-us .about-us-content p span {
+    display: none;
+  }
+  .about-us .about-us-img {
+    grid-area: right;
+    width: 100%;
+    background-size: cover;
+  }
+  .contacts .contact {
+    grid-template-areas: "title" "img" "form";
+  }
+  .contacts .contact .contact-img img {
+    width: 260px;
+    height: 229px;
+  }
+  .contacts .contact .contact-img::after {
+    width: 200px;
+    height: 200px;
+    left: 51px;
+    top: 26px;
+  }
+  .contacts .contact .contact-title h3 {
+    font-size: 60px;
+    line-height: 72px;
+  }
+  .footer-flex {
+    flex-direction: column;
+    border-bottom: none;
+    row-gap: 20px;
+  }
+  .footer-flex .footer-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .footer-flex .footer-img {
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
   }
 }/*# sourceMappingURL=style.css.map */
