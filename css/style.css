@@ -617,6 +617,7 @@ h3 {
   }
   .contacts .contact {
     grid-template-areas: "title" "img" "form";
+    height: auto;
   }
   .contacts .contact .contact-img img {
     width: 260px;
@@ -736,6 +737,7 @@ h3 {
   }
   .contacts .contact {
     grid-template-areas: "title" "img" "form";
+    height: auto;
   }
   .contacts .contact .contact-img img {
     width: 260px;
